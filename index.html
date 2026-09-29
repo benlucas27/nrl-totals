@@ -3,15 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NRL Totals · Finals Week 3 Scoring Report</title>
+<title>NRL Totals · Grand Final Scoring Report</title>
 <style>
 :root {
---bg: #fafafa;
---surface: #ffffff;
---border: #e4e4e7;
---text: #18181b;
---text-muted: #6b7280;
---text-subtle: #9ca3af;
+--bg: #fafafa; --surface: #ffffff; --border: #e4e4e7;
+--text: #18181b; --text-muted: #6b7280; --text-subtle: #9ca3af;
 --green: #15803d; --green-bg: #f0fdf4;
 --blue: #1d4ed8; --blue-bg: #eff6ff;
 --amber: #b45309; --amber-bg: #fef9c3;
@@ -24,190 +20,105 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .container { max-width: 760px; margin: 0 auto; padding: 32px 20px 80px; }
 header { padding-bottom: 24px; border-bottom: 2px solid var(--border); margin-bottom: 32px; }
 h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; }
-.meta { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
-.data-flags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-.flag { font-size: 11px; padding: 2px 10px; border: 1px solid var(--border); border-radius: 3px; color: var(--text-muted); }
-.flag-warn { border-color: #fca5a5; background: #fff1f2; color: #b91c1c; }
-.flag-ok { border-color: #86efac; background: #f0fdf4; color: var(--green); }
-nav { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
-nav a { font-size: 13px; color: var(--text-muted); text-decoration: none; padding: 4px 12px; border: 1px solid var(--border); border-radius: 4px; }
-nav a:hover { color: var(--text); border-color: var(--text-muted); }
-h2 { font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin: 32px 0 14px; }
-.summary-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; margin-bottom: 24px; }
-.summary-row { font-size: 14px; padding: 3px 0; }
-.multi-box { background: var(--blue-bg); border: 1px solid #bfdbfe; border-radius: var(--radius); padding: 20px; margin-bottom: 32px; }
-.multi-title { font-size: 15px; font-weight: 600; color: var(--blue); margin-bottom: 12px; }
-.multi-note { font-size: 12px; color: var(--text-muted); }
-.game-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 14px; }
-.game-title { font-size: 17px; font-weight: 600; margin-bottom: 2px; }
-.game-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 12px; }
-.tier-badge { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 12px; border-radius: 12px; margin-bottom: 12px; }
-.tier-high { background: var(--green-bg); color: var(--green); }
-.tier-solid { background: var(--amber-bg); color: var(--amber); }
-.tier-watch { background: var(--orange-bg); color: var(--orange); }
-.signals { font-size: 13px; color: var(--text-muted); display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; margin-bottom: 12px; }
-.signal { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 10px 12px; }
-.sig-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-subtle); margin-bottom: 3px; }
-.sig-val { font-weight: 600; font-size: 14px; color: var(--text); }
-.sig-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
-.verdict { font-size: 14px; font-weight: 500; padding-top: 12px; border-top: 1px solid var(--border); }
-.shootout-box { background: var(--red-bg); border: 2px solid #fca5a5; border-radius: var(--radius); padding: 14px 16px; margin-top: 14px; }
-.shootout-label { font-size: 13px; font-weight: 700; color: var(--red); margin-bottom: 6px; }
-.shootout-text { font-size: 13px; color: #7f1d1d; line-height: 1.6; }
-.record-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
-.record-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; text-align: center; }
-.record-pct { font-size: 30px; font-weight: 700; }
-.record-label { font-size: 11px; color: var(--text-muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
-.disclaimer { font-size: 12px; color: var(--text-subtle); margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--border); line-height: 1.8; }
-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-muted); }
-footer a { color: var(--text-muted); }
-@media (max-width: 520px) { .record-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); } .signals { grid-template-columns: 1fr; } }
+h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin: 36px 0 14px; }
+.meta { font-size: 13px; color: var(--text-muted); margin-top: 6px; }
+.sources { font-size: 12px; color: var(--text-subtle); margin-top: 10px; line-height: 1.6; }
+nav { margin-top: 14px; display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; }
+nav a, footer a { color: var(--blue); text-decoration: none; }
+.box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; }
+.summary-row { font-size: 14px; padding: 6px 0; }
+.multi-title { font-weight: 600; margin-bottom: 6px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 20px; margin-bottom: 20px; }
+.card h3 { font-size: 18px; font-weight: 700; }
+.card .sub { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+.tier { display: inline-block; margin-top: 12px; font-size: 13px; font-weight: 700; padding: 5px 10px; border-radius: 999px; }
+.tier-solid { background: var(--blue-bg); color: var(--blue); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-top: 16px; }
+.stat { border: 1px solid var(--border); border-radius: 6px; padding: 12px; }
+.stat .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-subtle); }
+.stat .val { font-size: 17px; font-weight: 700; margin-top: 2px; }
+.stat .det { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+.model { margin-top: 16px; background: var(--green-bg); border-radius: 6px; padding: 14px; }
+.model .val { font-size: 22px; font-weight: 700; color: var(--green); }
+.verdict { margin-top: 14px; font-size: 14px; }
+.flag { margin-top: 14px; font-size: 13px; background: var(--amber-bg); border-radius: 6px; padding: 12px 14px; color: #713f12; }
+.track { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+.track .big { font-size: 26px; font-weight: 700; }
+.track .small { font-size: 12px; color: var(--text-muted); }
+.note { font-size: 12px; color: var(--text-muted); margin-top: 28px; line-height: 1.7; }
+footer { margin-top: 32px; font-size: 12px; color: var(--text-subtle); border-top: 1px solid var(--border); padding-top: 16px; }
 </style>
 </head>
 <body>
 <div class="container">
-
 <header>
-<h1>NRL Totals &middot; Finals Week 3</h1>
-<div class="meta">2 games analysed &middot; Preliminary finals, 25 &amp; 27 Sep 2026 &middot; H2H 2022&ndash;2026 &middot; Teams via official 22-man lists (NRL.com / Zero Tackle, cut to 20 for Dolphins v Roosters)</div>
-<div class="data-flags">
-<span class="flag flag-ok">Lines: Sportsbet via alphr.com.au &mdash; 44.5 &amp; 42.5 (bet365 has Dolphins v Roosters at 43.5)</span>
-<span class="flag flag-ok">H2H: 2022&ndash;2026, rugbyleagueproject.org</span>
-<span class="flag flag-ok">Season form &amp; market O/U: aussportstipping.com (full season) blended with each side's last 5 games at 2&times;</span>
-<span class="flag flag-warn">Dolphins v Roosters kicks off tonight (Fri 7:50pm) &mdash; check the line hasn't moved before acting</span>
-<span class="flag flag-warn">Weather: Brisbane showers clearing by evening, light winds &middot; Sydney Sunday cloudy with a small chance of light rain &mdash; &minus;1pt applied to both, recheck Sydney closer to kickoff</span>
-</div>
-<nav>
-<a href="tryscorers.html">Try scorers &rarr;</a>
-<a href="history.html">Record &amp; history &rarr;</a>
-</nav>
+  <h1>NRL Totals &middot; Grand Final</h1>
+  <div class="meta">1 game analysed &middot; Grand Final, Sun 4 Oct 2026 &middot; H2H 2022&ndash;2026 &middot; Teams via official 22-man list (NRL.com, 29 Sep)</div>
+  <div class="sources">
+    Line: Total 42.5 (market consensus, $1.91 &mdash; Sportsbet line not yet posted on alphr.com.au at time of analysis, recheck before acting)<br>
+    H2H: 2022&ndash;2026, rugbyleagueproject.org &middot; Season form &amp; market O/U: aussportstipping.com (full season incl. finals) blended with each side's last 5<br>
+    Weather: Sydney Sunday forecasting drizzle (low confidence) &mdash; &minus;2 applied, recheck closer to kickoff<br>
+    Daylight saving starts Sunday morning &mdash; kickoff is 7:30pm AEDT (6:30pm AEST)
+  </div>
+  <nav><a href="tryscorers.html">Try scorers &rarr;</a><a href="history.html">Record &amp; history &rarr;</a></nav>
 </header>
 
 <h2>Quick summary</h2>
-<div class="summary-box">
-<div class="summary-row">&#128992; <strong>WATCH:</strong> Panthers v Knights &mdash; thin under lean vs 42.5</div>
-<div class="summary-row">&#128992; <strong>WATCH:</strong> Dolphins v Roosters &mdash; data leans OVER 44.5 (no under tier)</div>
-<div class="summary-row">&#128293; <strong>SHOOTOUT RISK:</strong> Dolphins v Roosters &mdash; standard UNDER 44.5 unsafe &middot; alt-totals Over 26.5&ndash;32.5 range if you want exposure</div>
-<div class="summary-row">No HIGH or SOLID leans this round.</div>
+<div class="box">
+  <div class="summary-row">&#128309; <strong>SOLID:</strong> Roosters v Knights &mdash; UNDER 42.5 (implied ~37.7, gap +4.8)</div>
+  <div class="summary-row">&#128293; <strong>SHOOTOUT RISK:</strong> none this week</div>
+  <div class="summary-row" style="color:var(--text-muted)">No HIGH leans &mdash; one-game slate.</div>
 </div>
 
 <h2>Multi recommendation</h2>
-<div class="multi-box">
-<div class="multi-title">No multi this round</div>
-<div class="multi-note">Multis are built from HIGH-tier UNDER legs only. Zero HIGH (or SOLID) legs on the two-game prelim slate, and Shootout Risk flags never go into the multi. Nothing to back at the standard line this week with real conviction.</div>
+<div class="box">
+  <div class="multi-title">No multi this round</div>
+  <div style="font-size:14px;color:var(--text-muted)">Multis are built from HIGH-tier UNDER legs only, and there's one game on the card. The Grand Final is a SOLID single, not a multi leg.</div>
 </div>
 
 <h2>Game analysis</h2>
+<div class="card">
+  <h3>Sydney Roosters v Newcastle Knights</h3>
+  <div class="sub">Grand Final &middot; Sun 4 Oct &middot; 7:30pm AEDT (6:30pm AEST) &middot; Accor Stadium, Sydney &middot; Line: Total 42.5</div>
+  <span class="tier tier-solid">&#128309; SOLID &mdash; UNDER 42.5</span>
 
-<!-- GAME 1 -->
-<div class="game-card">
-<div class="game-title">Dolphins v Sydney Roosters</div>
-<div class="game-meta">Preliminary Final &middot; Fri 25 Sep &middot; 7:50pm AEST &middot; Suncorp Stadium, Brisbane &middot; Line: Total 44.5 (Sportsbet)</div>
-<span class="tier-badge tier-watch">&#128992; WATCH &mdash; leans OVER 44.5</span>
-<div class="signals">
-<div class="signal">
-<div class="sig-label">H2H since 2023 (plain)</div>
-<div class="sig-val">2/7 under 44.5 (29%)</div>
-<div class="sig-sub">Raw avg 56.9pts &middot; last 4: 62, 76, 58, 38</div>
-</div>
-<div class="signal">
-<div class="sig-label">Weighted H2H avg</div>
-<div class="sig-val">~58.8pts</div>
-<div class="sig-sub">sd 14.9 &middot; range 38&ndash;76 &middot; n=7 (Dolphins joined 2023)</div>
-</div>
-<div class="signal">
-<div class="sig-label">Season form</div>
-<div class="sig-val">~44.5pts combined</div>
-<div class="sig-sub">Dolphins 48.4 season avg / 44.8 last 5 &middot; Roosters 46.4 season / 38.4 last 5 (incl. 46&ndash;10 semi win, 56 total)</div>
-</div>
-<div class="signal">
-<div class="sig-label">Market O/U tendency</div>
-<div class="sig-val">~61% under combined</div>
-<div class="sig-sub">Dolphins 15U&ndash;10O &middot; Roosters 16U&ndash;10O &middot; but Dolphins home games avg 54.9 (7O&ndash;5U)</div>
-</div>
-<div class="signal">
-<div class="sig-label">Team news</div>
-<div class="sig-val">Walker back (Roosters) &middot; Dolphins full strength</div>
-<div class="sig-sub">Sam Walker returns at 7 after syndesmosis surgery, DCE back to 6, Savala to bench &middot; Flegler cleared HIA, Kaufusi back on the Dolphins bench &middot; no absence modifier</div>
-</div>
-<div class="signal">
-<div class="sig-label">Model expectation</div>
-<div class="sig-val">~49.8pts</div>
-<div class="sig-sub">Gap vs line: &minus;5.3pts (over side) &middot; Line: 44.5 &middot; weather &minus;1</div>
-</div>
-</div>
-<div class="verdict">History says this fixture runs hot: five of the seven meetings since 2023 cleared 44.5, and the weighted average sits around 58.8. Season form and market tendency pull it back towards the line (both sides have been under-leaning teams all year, and the Roosters' last five average just 38.4), so the composite lands around 49.8. That's a 5.3pt gap to the OVER side, not an under bet. Worth noting the last meeting (Round 26) was a tight 26&ndash;12 at 38 total, and the model's Shootout Risk flag on this exact pairing was wrong that week. Sits at WATCH with the flag below.</div>
-<div class="shootout-box">
-<div class="shootout-label">&#128293; SHOOTOUT RISK</div>
-<div class="shootout-text">The standard Under is unsafe here (H2H cleared the line in 71% of meetings, sd 14.9, n=7). If you want exposure, consider an alternate-totals Over well below the posted line &mdash; roughly line minus 12 to minus 18 (Over 26.5&ndash;32.5 instead of Over 44.5). Check Sportsbet's alternate totals market for the actual price. This is not a recommendation to bet the standard Over at the posted line. Gate check: plain H2H under 29% (&le;35%) &middot; n=7 (&ge;6) &middot; sd 14.9 (&le;16) &middot; market tendency 60&ndash;62% under for both sides (below the 65% contradiction threshold).</div>
-</div>
-</div>
+  <div class="grid">
+    <div class="stat"><div class="lbl">H2H since 2022 (plain)</div><div class="val">4/7 under 42.5 (57%)</div><div class="det">Raw avg 40.4pts &middot; last 4: 45, 62, 20, 42</div></div>
+    <div class="stat"><div class="lbl">Weighted H2H avg</div><div class="val">~41.1pts</div><div class="det">sd 14.9 &middot; range 20&ndash;62 &middot; n=7 &middot; four of the last five decided by 4pts or less</div></div>
+    <div class="stat"><div class="lbl">Season form</div><div class="val">~48.1pts combined</div><div class="det">Roosters 46.8 season / 50.2 last 5 (38, 70, 31, 56, 56) &middot; Knights 48.6 season / 46.8 last 5 (68, 78, 30, 22, 36)</div></div>
+    <div class="stat"><div class="lbl">Market O/U tendency</div><div class="val">~54% under combined</div><div class="det">Roosters 16U&ndash;11O (59%) &middot; Knights 13U&ndash;14O (48%)</div></div>
+    <div class="stat"><div class="lbl">Team news</div><div class="val">Crossland suspended (Knights)</div><div class="det">Hooker Phoenix Crossland out (4-game ban) &mdash; Harrison Graham starts at 9 (&minus;4). D. Brown, J. Saifiti, Mooney still out but already priced into the Knights' finals form, so no extra hit. Roosters unchanged; Connor Watson (bench) needs HIA clearance Thursday.</div></div>
+    <div class="stat"><div class="lbl">Weather</div><div class="val">Drizzle forecast</div><div class="det">Sydney Sun: drizzle, 15&ndash;19&deg;C, light winds, low-confidence forecast &middot; &minus;2 (light rain)</div></div>
+  </div>
 
-<!-- GAME 2 -->
-<div class="game-card">
-<div class="game-title">Penrith Panthers v Newcastle Knights</div>
-<div class="game-meta">Preliminary Final &middot; Sun 27 Sep &middot; 4:00pm AEST &middot; Accor Stadium, Sydney &middot; Line: Total 42.5 (Sportsbet)</div>
-<span class="tier-badge tier-watch">&#128992; WATCH &mdash; thin under lean, UNDER 42.5</span>
-<div class="signals">
-<div class="signal">
-<div class="sig-label">H2H since 2022 (plain)</div>
-<div class="sig-val">4/9 under 42.5 (44%)</div>
-<div class="sig-sub">Raw avg 44.0pts &middot; last 4: 36, 31, 60, 56</div>
-</div>
-<div class="signal">
-<div class="sig-label">Weighted H2H avg</div>
-<div class="sig-val">~44.5pts</div>
-<div class="sig-sub">sd 12.0 &middot; range 31&ndash;60 &middot; last two meetings both Penrith blowouts (48&ndash;12, 44&ndash;12)</div>
-</div>
-<div class="signal">
-<div class="sig-label">Season form</div>
-<div class="sig-val">~43.8pts combined</div>
-<div class="sig-sub">Panthers 42.4 season / 31.8 last 5 &middot; Knights 49.1 season / 52.0 last 5 (62, 68, 78 before finals, then 30 and 22)</div>
-</div>
-<div class="signal">
-<div class="sig-label">Market O/U tendency</div>
-<div class="sig-val">~59% under combined</div>
-<div class="sig-sub">Panthers 18U&ndash;7O (72%, best under record in the comp) &middot; Knights 12U&ndash;14O</div>
-</div>
-<div class="signal">
-<div class="sig-label">Team news</div>
-<div class="sig-val">Cleary named with foot injury &middot; Knights unchanged</div>
-<div class="sig-sub">Cleary DOUBT-ish (named, playing through it) &middot; Garner &amp; Cogger back for Penrith, Yeo starts at 13 &middot; Knights same 19 as the semi, still without D. Brown &amp; J. Saifiti (&minus;2) &middot; Lucas building minutes off the bench</div>
-</div>
-<div class="signal">
-<div class="sig-label">Model expectation</div>
-<div class="sig-val">~40.6pts</div>
-<div class="sig-sub">Gap vs line: +1.9pts &middot; Line: 42.5 &middot; absences &minus;2, weather &minus;1</div>
-</div>
-</div>
-<div class="verdict">Signals are split. Penrith are the comp's best under team (72%) and have gone under in each of their last several games, and Newcastle's finals football has been tight (30 and 22 totals). But the plain H2H only has 44% of meetings under 42.5 and the last two were Penrith routs that cleared the line comfortably &mdash; a lopsided result is the main risk to the under here, with the Panthers 10.5pt favourites. A 1.9pt gap with mixed signals is WATCH, not a tier. If you're forced to pick a side it's the under, but it's not a graded bet.</div>
+  <div class="model">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--green)">Model expectation</div>
+    <div class="val">~37.7pts</div>
+    <div style="font-size:13px;margin-top:2px">Gap vs line: <strong>+4.8pts (under side)</strong> &middot; Line: 42.5 &middot; composite 43.7, absences &minus;4, weather &minus;2</div>
+  </div>
+
+  <div class="verdict">
+    Two of the three signals point under 42.5. The plain H2H has 4 of 7 meetings under the number with a weighted average of 41.1, and the Roosters are one of the comp's better under sides (59%). Season form is the dissent &mdash; the Roosters' last five average 50.2 off the back of 46&ndash;10 and 36&ndash;20 finals wins. What tips it to SOLID is the Knights losing their starting hooker on top of a finals run where they've conceded 34 points in three games (totals of 30, 22 and 36). Four of the last five Roosters v Knights games were decided by four points or less. Not HIGH &mdash; form doesn't agree, and the Roosters' attack has been hot. The main risk to the under is the same one that burnt the FW2 SOLID: a Roosters blowout if the Knights' middle fades without Crossland.
+  </div>
+  <div class="flag">Shootout Risk gate not met &mdash; plain H2H under 57% (needs &le;35%). No alternate-totals suggestion this week.</div>
 </div>
 
 <h2>Season track record</h2>
-<div class="record-grid">
-<div class="record-card">
-<div class="record-pct">52%</div>
-<div class="record-label">Scoring leans (excl. WATCH)<br>Through Finals Wk 2 &middot; see history</div>
-</div>
-<div class="record-card">
-<div class="record-pct">17/33</div>
-<div class="record-label">Excl. WATCH<br>35/62 incl. WATCH</div>
-</div>
-<div class="record-card">
-<div class="record-pct">1/5</div>
-<div class="record-label">Multis won<br>Through Finals Wk 2</div>
-</div>
+<div class="box track">
+  <div><div class="big">52%</div><div class="small">Scoring leans (excl. WATCH)<br>17/33 &middot; through Finals Wk 3</div></div>
+  <div><div class="big">58%</div><div class="small">Incl. WATCH<br>37/64 &middot; FW3 WATCH calls 2/2</div></div>
+  <div><div class="big">1/5</div><div class="small">Multis won<br>Through Finals Wk 3</div></div>
 </div>
 
-<div class="disclaimer">
-&#9888;&#65039; Finals week, not a numbered round &mdash; fixtures from NRL.com Finals Week 3. Season form blends each team's full-season average match total (aussportstipping.com) with their last five games at double weight; market tendency is each side's season under/over record against the posted total. Composite: H2H 40% / form 30% / market 15%, normalised, then team-sheet and weather modifiers. Finals Week 2 result: Roosters v Sharks SOLID UNDER 45.5 missed (56 total); Warriors v Knights WATCH under hit (22 total) &mdash; see history. Team lists: Dolphins v Roosters cut to 20 on 24 Sep; Panthers v Knights still the 22-man list from 22 Sep, final 19 due Saturday.<br>
-Analysis only &middot; Not financial advice &middot; Gamble responsibly &mdash; 1800 858 858
+<div class="note">
+  &#9888;&#65039; Grand Final week, not a numbered round &mdash; fixture from NRL.com. Season form averages each side's full-season average match total (aussportstipping.com) with their last five games; market tendency is each side's season under/over record against the posted total. Composite: H2H 40% / form 30% / market 15%, normalised, then team-sheet and weather modifiers. Finals Week 3 result: both games were WATCH only (no rated leans) &mdash; Dolphins v Roosters finished 56 (the Shootout Risk flag landed), Panthers v Knights finished 36 (thin under lean landed). See history. Line 42.5 sourced from bookmaker previews (bets.com.au, 29 Sep) because alphr.com.au hadn't posted Grand Final lines yet &mdash; confirm the Sportsbet number before acting.<br>
+  Analysis only &middot; Not financial advice &middot; Gamble responsibly &mdash; 1800 858 858
 </div>
+
 <footer>
-<p>NRL Totals Model &middot; Finals Week 3 analysis &middot; Data: nrl.com, rugbyleagueproject.org, aussportstipping.com, zerotackle.com, alphr.com.au</p>
-<p><a href="tryscorers.html">Try scorers &rarr;</a> &middot; <a href="history.html">Record &amp; history &rarr;</a></p>
+  <p>NRL Totals Model &middot; Grand Final analysis &middot; Data: nrl.com, rugbyleagueproject.org, aussportstipping.com, zerotackle.com, bets.com.au</p>
+  <p><a href="tryscorers.html">Try scorers &rarr;</a> &middot; <a href="history.html">Record &amp; history &rarr;</a></p>
 </footer>
-
 </div>
 </body>
 </html>
