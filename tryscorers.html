@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NRL Totals · Finals Week 3 Try Scorers</title>
+<title>NRL Try Scorers · Grand Final</title>
 <style>
 :root {
---bg: #fafafa; --surface: #ffffff; --border: #e4e4e7; --text: #18181b;
---text-muted: #6b7280; --text-subtle: #9ca3af;
+--bg: #fafafa; --surface: #ffffff; --border: #e4e4e7;
+--text: #18181b; --text-muted: #6b7280; --text-subtle: #9ca3af;
 --green: #15803d; --green-bg: #f0fdf4;
 --blue: #1d4ed8; --blue-bg: #eff6ff;
 --amber: #b45309; --amber-bg: #fef9c3;
@@ -16,80 +16,75 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
 .container { max-width: 760px; margin: 0 auto; padding: 32px 20px 80px; }
-header { padding-bottom: 24px; border-bottom: 2px solid var(--border); margin-bottom: 32px; }
+header { padding-bottom: 24px; border-bottom: 2px solid var(--border); margin-bottom: 28px; }
 h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; }
-.meta { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
-nav { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
-nav a { font-size: 13px; color: var(--text-muted); text-decoration: none; padding: 4px 12px; border: 1px solid var(--border); border-radius: 4px; }
-nav a:hover { color: var(--text); border-color: var(--text-muted); }
-h2 { font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin: 32px 0 14px; }
-.best3-box { background: var(--blue-bg); border: 1px solid #bfdbfe; border-radius: var(--radius); padding: 20px; margin-bottom: 32px; }
-.best3-title { font-size: 15px; font-weight: 600; color: var(--blue); margin-bottom: 12px; }
-.best3-row { font-size: 14px; padding: 6px 0; border-bottom: 1px solid #dbeafe; }
-.best3-row:last-of-type { border-bottom: none; }
-.game-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 14px; }
-.game-title { font-size: 17px; font-weight: 600; margin-bottom: 2px; }
-.game-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 14px; }
-.pick-row { display: flex; align-items: baseline; gap: 10px; font-size: 14px; padding: 7px 0; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
-.pick-row:last-child { border-bottom: none; }
-.pick-name { font-weight: 600; min-width: 140px; }
-.pick-detail { font-size: 12px; color: var(--text-muted); }
-.pick-tier { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 9px; border-radius: 10px; }
-.tier-best { background: var(--green-bg); color: var(--green); }
-.tier-solid { background: var(--amber-bg); color: var(--amber); }
-.tier-value { background: var(--blue-bg); color: var(--blue); }
-.disclaimer { font-size: 12px; color: var(--text-subtle); margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--border); line-height: 1.8; }
-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-muted); }
-footer a { color: var(--text-muted); }
+h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin: 32px 0 14px; }
+.meta { font-size: 13px; color: var(--text-muted); margin-top: 6px; }
+nav { margin-top: 14px; display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; }
+nav a, footer a { color: var(--blue); text-decoration: none; }
+.best { background: var(--green-bg); border: 1px solid #bbf7d0; border-radius: var(--radius); padding: 18px 20px; }
+.best-title { font-weight: 700; color: var(--green); margin-bottom: 8px; }
+.best-row { font-size: 14px; padding: 4px 0; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+.card h3 { font-size: 18px; font-weight: 700; }
+.card .sub { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+.pick { border-top: 1px solid var(--border); padding: 14px 0; }
+.pick-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-weight: 600; }
+.badge { font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 999px; }
+.b-best { background: var(--green-bg); color: var(--green); }
+.b-solid { background: var(--blue-bg); color: var(--blue); }
+.pick-why { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+.aside { font-size: 13px; color: var(--text-muted); margin-top: 12px; background: var(--amber-bg); border-radius: 6px; padding: 10px 12px; }
+.note { font-size: 12px; color: var(--text-muted); margin-top: 28px; line-height: 1.7; }
+footer { margin-top: 32px; font-size: 12px; color: var(--text-subtle); border-top: 1px solid var(--border); padding-top: 16px; }
 </style>
 </head>
 <body>
 <div class="container">
-
 <header>
-<h1>NRL Totals &middot; Finals Week 3 Try Scorers</h1>
-<div class="meta">2 preliminary finals &middot; Ranked by 2026 season form (ZeroTackle) &amp; confirmed team lists &middot; indicative Sportsbet anytime prices via alphr.com.au where available</div>
-<nav>
-<a href="index.html">&larr; Scoring report</a>
-<a href="history.html">Record &amp; history &rarr;</a>
-</nav>
+  <h1>Try Scorers &middot; Grand Final</h1>
+  <div class="meta">Roosters v Knights &middot; Sun 4 Oct &middot; 7:30pm AEDT &middot; Accor Stadium &middot; Rankings: ZeroTackle 2026 try leaderboard &middot; Teams: NRL.com official list (29 Sep)</div>
+  <nav><a href="index.html">&larr; Scoring report</a><a href="history.html">Record &amp; history &rarr;</a></nav>
 </header>
 
-<h2>Best picks this round</h2>
-<div class="best3-box">
-<div class="best3-title">Headline picks &mdash; Finals Week 3</div>
-<div class="best3-row"><strong>Thomas Jenkins</strong> (Panthers) &mdash; #2 try-scorer in the comp, 30 from 24 games (1.25/game). Penrith are 10.5pt favourites and he's their primary finisher. ~$1.89 anytime.</div>
-<div class="best3-row"><strong>Selwyn Cobbo</strong> (Dolphins) &mdash; 17 from 18 (0.94/game, best strike rate on the Dolphins list), home prelim at Suncorp. ~$1.93 anytime.</div>
-<div class="best3-row"><strong>Greg Marzhew</strong> (Knights) &mdash; #3 nationally, 24 from 23 (1.04/game). Newcastle's go-to if they're chasing points. ~$2.60 anytime.</div>
+<h2>Best 3</h2>
+<div class="best">
+  <div class="best-title">Grand Final headline picks</div>
+  <div class="best-row">1. <strong>Greg Marzhew</strong> (Knights, wing) &mdash; BEST &middot; 1.0 unit</div>
+  <div class="best-row">2. <strong>Daniel Tupou</strong> (Roosters, wing) &mdash; SOLID &middot; 0.75 unit</div>
+  <div class="best-row">3. <strong>Mark Nawaqanitawase</strong> (Roosters, wing) &mdash; SOLID &middot; 0.75 unit</div>
 </div>
 
-<h2>Game by game</h2>
+<h2>Game picks</h2>
+<div class="card">
+  <h3>Sydney Roosters v Newcastle Knights</h3>
+  <div class="sub">Model total ~37.7 (SOLID under 42.5) &mdash; a tighter game narrows the field, so the picks stay on the edges where both sides do most of their scoring.</div>
 
-<div class="game-card">
-<div class="game-title">Dolphins v Sydney Roosters</div>
-<div class="game-meta">Fri 25 Sep &middot; 7:50pm &middot; Suncorp Stadium &middot; Squads cut to 20 &middot; Dolphins full strength (Flegler cleared HIA, Kaufusi back) &middot; Walker returns at 7 for the Roosters</div>
-<div class="pick-row"><span class="pick-tier tier-best">BEST</span><span class="pick-name">Selwyn Cobbo</span><span class="pick-detail">17 tries from 18 games (rank #9, 0.94/game) &middot; named on the wing &middot; ~$1.93</span></div>
-<div class="pick-row"><span class="pick-tier tier-solid">SOLID</span><span class="pick-name">Jamayne Isaako</span><span class="pick-detail">21 tries from 24 games (rank #4, 0.88/game) &middot; the Dolphins' highest-volume scorer &middot; ~$2.03</span></div>
-<div class="pick-row"><span class="pick-tier tier-solid">SOLID</span><span class="pick-name">Mark Nawaqanitawase</span><span class="pick-detail">15 tries from 19 games (rank #13, 0.79/game) &middot; the Roosters' top scorer, and Walker's return should put more ball on his edge &middot; price TBC</span></div>
+  <div class="pick">
+    <div class="pick-head">Greg Marzhew &middot; Knights #5 <span class="badge b-best">BEST &middot; 1.0u</span></div>
+    <div class="pick-why">ZeroTackle #3 in the comp &mdash; 24 tries in 23 games (1.04/game), the best strike rate of anyone playing Sunday. Newcastle's most reliable finisher and the natural target when Sharpe and Ponga shift it left.</div>
+  </div>
+  <div class="pick">
+    <div class="pick-head">Daniel Tupou &middot; Roosters #2 <span class="badge b-solid">SOLID &middot; 0.75u</span></div>
+    <div class="pick-why">13 tries in 14 games (0.93/game, #19 on the leaderboard). Scored in 2 straight and 3 of his last 4, and he's the Roosters' main aerial target &mdash; Walker and DCE's kicking game will look for him in a tight contest. Short price (~$1.95 in previews).</div>
+  </div>
+  <div class="pick">
+    <div class="pick-head">Mark Nawaqanitawase &middot; Roosters #5 <span class="badge b-solid">SOLID &middot; 0.75u</span></div>
+    <div class="pick-why">15 tries in 19 games (0.79/game, #13) and red-hot &mdash; 5 tries in his last 3, including the 90m intercept against the Dolphins. Last game before he heads to Japan.</div>
+  </div>
+
+  <div class="aside">Also considered: <strong>Dominic Young</strong> (Knights #2) &mdash; 20 in 23 (0.87/game), scored in 4 straight and 5 tries in 3 games at Accor this year (~$2.45). Genuine fourth pick if you want Knights exposure on both edges. No VALUE ($5+) pick this week &mdash; no one outside the four wingers has a strike rate worth backing at longer odds in a game the model expects to be tight.</div>
 </div>
 
-<div class="game-card">
-<div class="game-title">Penrith Panthers v Newcastle Knights</div>
-<div class="game-meta">Sun 27 Sep &middot; 4:00pm &middot; Accor Stadium &middot; 22-man lists (final 19 due Saturday) &middot; Cleary named despite a foot injury &middot; Knights unchanged from the semi</div>
-<div class="pick-row"><span class="pick-tier tier-best">BEST</span><span class="pick-name">Thomas Jenkins</span><span class="pick-detail">30 tries from 24 games (rank #2, 1.25/game) &middot; starting wing &middot; ~$1.89</span></div>
-<div class="pick-row"><span class="pick-tier tier-solid">SOLID</span><span class="pick-name">Greg Marzhew</span><span class="pick-detail">24 tries from 23 games (rank #3, 1.04/game) &middot; starting wing &middot; ~$2.60</span></div>
-<div class="pick-row"><span class="pick-tier tier-solid">SOLID</span><span class="pick-name">Dominic Young</span><span class="pick-detail">20 tries from 23 games (rank #6, 0.87/game) &middot; scored the winner at Eden Park &middot; ~$2.60</span></div>
+<div class="note">
+  Only players in the named 17 considered. Connor Watson (Roosters bench) is subject to HIA clearance and the Knights will add one of Hagan, McCarthy or Salesa-Leaumoana to the bench following Crossland's suspension &mdash; check final teams one hour before kickoff. Tries and games from ZeroTackle's 2026 leaderboard (may lag the most recent finals). Prices quoted from bookmaker previews on 29 Sep and not verified at Sportsbet.<br>
+  Analysis only &middot; Not financial advice &middot; Gamble responsibly &mdash; 1800 858 858
 </div>
 
-<div class="disclaimer">
-&#9888;&#65039; No VALUE ($5+) picks this round &mdash; none of the prices we could see reached $5, and none of the long shots had the form to justify a speculative play in a prelim. Prices are indicative Sportsbet anytime odds as listed by alphr.com.au on 22 Sep; verify live before backing. Only players in the announced squads are listed. Panthers v Knights squads can still change when the final 19 are named. Try tallies from ZeroTackle's 2026 leaderboard. Tiers: BEST 1.0 unit, SOLID 0.75 unit, VALUE 0.5 unit.<br>
-Analysis only &middot; Not financial advice &middot; Gamble responsibly &mdash; 1800 858 858
-</div>
 <footer>
-<p>NRL Totals Model &middot; Finals Week 3 try scorers &middot; Data: zerotackle.com, nrl.com, bets.com.au team lists, alphr.com.au</p>
-<p><a href="index.html">&larr; Scoring report</a> &middot; <a href="history.html">Record &amp; history &rarr;</a></p>
+  <p>NRL Totals Model &middot; Grand Final try scorer picks &middot; Data: zerotackle.com, nrl.com, bets.com.au</p>
+  <p><a href="index.html">&larr; Scoring report</a> &middot; <a href="history.html">Record &amp; history &rarr;</a></p>
 </footer>
-
 </div>
 </body>
 </html>
